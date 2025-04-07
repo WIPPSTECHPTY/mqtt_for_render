@@ -1,10 +1,3 @@
-listener 1883
-protocol mqtt
+FROM eclipse-mosquitto:2.0
 
-listener 9001
-protocol websockets
-
-allow_anonymous true
-persistence true
-persistence_location /mosquitto/data/
-log_dest stdout
+COPY mosquitto.conf /mosquitto/config/mosquitto.conf
